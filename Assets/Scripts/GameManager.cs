@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
         // 產生新箭頭，並且設定新箭頭的位置
         Instantiate(catfoodPrefab, new Vector3(px, 7, 0), Quaternion.identity);
     }
-
+    public void IncreaseHP()
+    {
+        hpGauge.GetComponent<Image>().fillAmount += 0.1f;
+    }
 
 
     public void DecreaseHP()

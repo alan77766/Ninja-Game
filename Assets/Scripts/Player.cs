@@ -29,7 +29,10 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.GetComponent<GameManager>().DecreaseHP();
+        if(collision.gameObject.tag=="arrow") 
+            gameManager.GetComponent<GameManager>().DecreaseHP();
+        else if (collision.gameObject.tag == "catfood")
+            gameManager.GetComponent<GameManager>().IncreaseHP();
     }
 
     // 當玩家按下畫面左按鍵時，貓咪往左移動「3」
